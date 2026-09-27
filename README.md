@@ -1,6 +1,13 @@
-# Agentic Entity Linking Explorer
+<div align="center">
+  <img src="frontend/assets/sostojka-logo.png" alt="Sostojka logo" width="112" height="112">
+  <h1>Состојка · Sostojka</h1>
+  <p>Локални рецепти. Поврзани состојки. / Local recipes. Connected ingredients.</p>
+  <p><strong>Explore Macedonian recipes and link their ingredients to USDA food data,<br>with AI-assisted translation, recipe context, and clear match explanations.</strong></p>
+  <p><a href="#setup--quick-start"><strong>Get started locally →</strong></a></p>
+  <p><a href="#what-it-does">What it does</a> · <a href="#the-5-stage-pipeline">The pipeline</a> · <a href="#what-you-see-on-screen">The interface</a> · <a href="#llm-configuration">AI setup</a> · <a href="#data-sources">Data</a> · <a href="#setup--quick-start">How to run it</a> · <a href="#rest-api-endpoints">API</a></p>
+</div>
 
-A visualization tool for an LLM-driven agentic entity linking system that maps Macedonian food ingredients to standardized entries in the USDA FoodData Central database. Built as a wrapper around the pipeline described in *Chapter 3.2 — LLM-Driven Agentic Entity Linking* of the thesis by Darko Gjorgjievski.
+**Sostojka** (состојка, Macedonian for “ingredient”) is a cross-lingual recipe explorer that maps Macedonian food ingredients to standardized entries in USDA FoodData Central. Built around the pipeline described in *Chapter 3.2 — LLM-Driven Agentic Entity Linking* of the thesis by Darko Gjorgjievski.
 
 ---
 
@@ -181,13 +188,14 @@ backend/                     # the application package (agent + API)
 frontend/                    # static roadmap web UI (served by api.py)
 ├── index.html
 ├── style.css
-└── app.js
+├── app.js
+└── assets/
+    └── sostojka-logo.png     # shared README and application logo
 data/
 ├── parsed_recipes.json      # Macedonian recipe dataset
 └── usdaClasses.csv          # USDA FoodData Central entries
 docs/
-├── HOW_IT_WORKS.md          # plain-language walkthrough
-└── screenshots/             # UI screenshots
+└── BRANDING.md               # name, repository description, and logo source prompt
 .env.example                 # copy to .env, then add your API key
 requirements.txt
 README.md
@@ -195,26 +203,6 @@ README.md
 
 ---
 
-## Running the app
-
-**Install dependencies:**
-```bash
-pip install -r requirements.txt
-```
-
-**Add your API key:**
-```bash
-cp .env.example .env   # then edit .env and set OPENAI_API_KEY
-```
-
-**Start the web app (roadmap UI + API), from the project root:**
-```bash
-uvicorn backend.api:app --port 8000
-```
-
-Open **`http://localhost:8000`** for the roadmap UI. Interactive REST API docs are at `http://localhost:8000/docs`.
-
----
 
 ## REST API endpoints
 

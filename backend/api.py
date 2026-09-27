@@ -1,5 +1,5 @@
 """
-FastAPI app for the Трпеза entity-linking explorer.
+FastAPI app for the Sostojka entity-linking explorer.
 
 Thin routing layer: configuration lives in ``config.py``, response models in
 ``schemas.py``, and the linking logic in the ``agent`` package. Serves the
@@ -43,7 +43,7 @@ RESERVED_PREFIXES = {"api", "static", "docs", "redoc", "openapi.json"}
 # ---------------------------------------------------------------------------
 
 app = FastAPI(
-    title="Трпеза — Entity Linking Explorer API",
+    title="Sostojka API",
     description="Agentic entity linking for Macedonian recipes → USDA FoodData Central",
     version="1.0.0",
 )
